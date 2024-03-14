@@ -1,0 +1,534 @@
+Program.Sub.ScreenSU.Start
+Gui.Form_Vendor..create
+Gui.Form_Vendor..caption("In-Inspection By Vendor")
+Gui.Form_Vendor..size(6165,4500)
+Gui.Form_Vendor..minx(0)
+Gui.Form_Vendor..miny(0)
+Gui.Form_Vendor..position(0,0)
+Gui.Form_Vendor..event(UnLoad,Form_Vendor_UnLoad)
+Gui.Form_Vendor..forecolor(0)
+Gui.Form_Vendor..fontstyle()
+Gui.Form_Vendor..BackColor(-2147483633)
+Gui.Form_Vendor..maxbutton(False)
+Gui.Form_Vendor..minbutton(False)
+Gui.Form_Vendor..mousepointer(0)
+Gui.Form_Vendor..sizeable(False)
+Gui.Form_Vendor.lbl_txt2_BegVend.create(label,"Beginning Vendor",True,1800,195,1,105,135,True,0,Arial,8,-2147483633,0)
+Gui.Form_Vendor.lbl_txt2_BegVend.SetInternationalID(64300)
+Gui.Form_Vendor.lbl_txt2_BegVend.defaultvalue("")
+Gui.Form_Vendor.txt2_BegVend.create(textbox,"",True,1800,300,1,105,330,True,0,Arial,8,16777215,1)
+Gui.Form_Vendor.txt2_BegVend.defaultvalue("")
+Gui.Form_Vendor.txt2_BegVend.Event(GotFocus,txt2_BegVend_GotFocus)
+Gui.Form_Vendor.txt2_BegVend.Event(LostFocus,txt2_BegVend_LostFocus)
+Gui.Form_Vendor.cmd_txt2_BegVend.create(button)
+Gui.Form_Vendor.cmd_txt2_BegVend.caption("^")
+Gui.Form_Vendor.cmd_txt2_BegVend.size(330,330)
+Gui.Form_Vendor.cmd_txt2_BegVend.position(1980,330)
+Gui.Form_Vendor.cmd_txt2_BegVend.defaultvalue("")
+Gui.Form_Vendor.cmd_txt2_BegVend.Event(Click,cmd_txt2_BegVend_Click)
+Gui.Form_Vendor.lbl_txt2_EndVend.create(label,"Ending Vendor",True,1800,200,1,2455,135,True,0,Arial,8,-2147483633,0)
+Gui.Form_Vendor.lbl_txt2_EndVend.SetInternationalID(216900)
+Gui.Form_Vendor.lbl_txt2_EndVend.defaultvalue("")
+Gui.Form_Vendor.txt2_EndVend.create(textbox,"",True,1800,300,1,2460,330,True,0,Arial,8,16777215,1)
+Gui.Form_Vendor.txt2_EndVend.defaultvalue("")
+Gui.Form_Vendor.txt2_EndVend.Event(GotFocus,txt2_EndVend_GotFocus)
+Gui.Form_Vendor.cmd_txt2_EndVend.create(button)
+Gui.Form_Vendor.cmd_txt2_EndVend.caption("^")
+Gui.Form_Vendor.cmd_txt2_EndVend.size(330,330)
+Gui.Form_Vendor.cmd_txt2_EndVend.position(4335,330)
+Gui.Form_Vendor.cmd_txt2_EndVend.defaultvalue("")
+Gui.Form_Vendor.cmd_txt2_EndVend.Event(Click,cmd_txt2_EndVend_Click)
+Gui.Form_Vendor.chk_AllVendor.create(checkbox)
+Gui.Form_Vendor.chk_AllVendor.caption("All Vendors")
+Gui.Form_Vendor.chk_AllVendor.size(1800,300)
+Gui.Form_Vendor.chk_AllVendor.position(105,675)
+Gui.Form_Vendor.chk_AllVendor.SetInternationalID(681007)
+Gui.Form_Vendor.chk_AllVendor.defaultvalue("")
+Gui.Form_Vendor.chk_AllVendor.Event(Click,chk_AllVendor_Click)
+Gui.Form_Vendor.lvw_Vendor.create(listview)
+Gui.Form_Vendor.lvw_Vendor.view(3)
+Gui.Form_Vendor.lvw_Vendor.addlistviewcolumn(variable.Translation.64300,2705,0)
+Gui.Form_Vendor.lvw_Vendor.addlistviewcolumn(variable.Translation.216900,2705,0)
+Gui.Form_Vendor.lvw_Vendor.size(5805,1995)
+Gui.Form_Vendor.lvw_Vendor.position(105,1215)
+Gui.Form_Vendor.cmd_lvw_VendorAdd.create(button)
+Gui.Form_Vendor.cmd_lvw_VendorAdd.caption("Add")
+Gui.Form_Vendor.cmd_lvw_VendorAdd.size(1005,330)
+Gui.Form_Vendor.cmd_lvw_VendorAdd.position(4815,330)
+Gui.Form_Vendor.cmd_lvw_VendorAdd.SetInternationalID(7600)
+Gui.Form_Vendor.cmd_lvw_VendorAdd.defaultvalue("")
+Gui.Form_Vendor.cmd_lvw_VendorAdd.Event(Click,cmd_lvw_VendorAdd_Click)
+Gui.Form_Vendor.cmd_lvw_VendorDelete.create(button)
+Gui.Form_Vendor.cmd_lvw_VendorDelete.caption("Delete")
+Gui.Form_Vendor.cmd_lvw_VendorDelete.size(1005,330)
+Gui.Form_Vendor.cmd_lvw_VendorDelete.position(105,3300)
+Gui.Form_Vendor.cmd_lvw_VendorDelete.SetInternationalID(171500)
+Gui.Form_Vendor.cmd_lvw_VendorDelete.defaultvalue("")
+Gui.Form_Vendor.cmd_lvw_VendorDelete.Event(Click,cmd_lvw_VendorDelete_Click)
+Gui.Form_Vendor.cmd_lvw_VendorClear.create(button)
+Gui.Form_Vendor.cmd_lvw_VendorClear.caption("Clear")
+Gui.Form_Vendor.cmd_lvw_VendorClear.size(1005,330)
+Gui.Form_Vendor.cmd_lvw_VendorClear.position(1185,3300)
+Gui.Form_Vendor.cmd_lvw_VendorClear.SetInternationalID(106700)
+Gui.Form_Vendor.cmd_lvw_VendorClear.defaultvalue("")
+Gui.Form_Vendor.cmd_lvw_VendorClear.Event(Click,cmd_lvw_VendorClear_Click)
+Gui.Form_Vendor.cmdPrint.Create(Button)
+Gui.Form_Vendor.cmdPrint.Size(855,375)
+Gui.Form_Vendor.cmdPrint.Position(105,3765)
+Gui.Form_Vendor.cmdPrint.Caption("Print")
+Gui.Form_Vendor.cmdPrint.Event(Click,cmdPrint_Click)
+Gui.Form_Vendor.cmdPrint.SetInternationalID(452800)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.iBIRunID.declare(Long,0)
+Variable.Global.lLogid.declare(Long,0)
+Variable.Global.sRange.Declare(String,"")
+Variable.Global.iKey.Declare(Long,0)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+
+	Gui.Form_Vendor..ApplyTranslation
+	
+	Gui.Form_Vendor..Show
+
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.LoadPOLines.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	V.Local.sRange.Declare(String,"")
+	V.Local.sSQL.Declare(String)
+
+	F.Intrinsic.String.Split(V.Args.Range,"*!*",V.Local.sRange)
+	F.Intrinsic.Control.If(V.Screen.Form_Vendor!chk_AllVendor.Value,=,1)
+		'Pulling records from Po_Lines, Po_Header, Vendor_Master
+		V.Local.sSQL.Set("Select A.Purchase_Order, Record_No, A.Vendor, a.Part, a.Location, a.UM_Purchasing, a.UM_Inventory, A.Job, A.Sequence, a.Cost, A.Qty_Recd_Not_Insp, Date_Last_Received, b.Buyer, Factor_Conversion,d.Name_Vendor, A.Qty_Received, A.Qty_Reject, A.Qty_Order, A.Qty_Recv_alt ")
+		F.Intrinsic.String.Build("{0} From V_PO_LINES as a Left Join V_Po_Header as b on a.Purchase_Order = b.Purchase_Order Left Join V_Inventory_Mstr as c On a.Part = c.Part and a.Location = c.Location",V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.String.Build("{0} Left Join V_Vendor_Master as d on a.Vendor = d.Vendor Where Qty_Recd_Not_Insp <> '0' Order By a.Purchase_Order, a.Record_No",V.Local.sSQL,V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		'Pulling records from Po_Lines, Po_Header, Vendor_Master
+		V.Local.sSQL.Set("Select A.Purchase_Order, Record_No, A.Vendor, a.Part, a.Location, a.UM_Purchasing, a.UM_Inventory, A.Job, A.Sequence, a.Cost, A.Qty_Recd_Not_Insp, Date_Last_Received, b.Buyer, Factor_Conversion,d.Name_Vendor, A.Qty_Received, A.Qty_Reject, A.Qty_Order, A.Qty_Recv_alt ")
+		F.Intrinsic.String.Build("{0} From V_PO_LINES as a Left Join V_Po_Header as b on a.Purchase_Order = b.Purchase_Order Left Join V_Inventory_Mstr as c On a.Part = c.Part and a.Location = c.Location",V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.String.Build("{0} Left Join V_Vendor_Master as d on a.Vendor = d.Vendor Where Qty_Recd_Not_Insp <> '0' and a.Vendor between '{1}' and '{2}' Order By a.Purchase_Order, a.Record_No",V.Local.sSQL,V.Local.sRange(0).Trim,V.Local.sRange(1).Trim,V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!Con.OpenCompanyConnection
+	
+	F.Intrinsic.Control.If(V.DataTable.Lines.Exists)
+		F.Data.DataTable.CreateFromSQL("TempLine","con",V.Local.sSQL)
+		
+		F.Intrinsic.Control.If(V.DataTable.TempLine.RowCount--,<>,-1)
+			F.Data.DataTable.Merge("TempLine","Lines",False,4)
+		F.Intrinsic.Control.EndIf
+		
+		F.Data.DataTable.Close("TempLine")
+	F.Intrinsic.Control.Else
+		F.Data.DataTable.CreateFromSQL("Lines","con",V.Local.sSQL,True)
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!Con.Close
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.LoadPOLines.End
+
+Program.Sub.LoadPOHist.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	V.Local.sSQL.Declare(String,"")
+	V.Local.iC.Declare(Long,0)
+	
+	F.ODBC.Connection!Con.OpenCompanyConnection
+	
+	'Pulling records for purchase orders in History matching records found from PO_Header
+	F.Intrinsic.Control.If(V.DataTable.Lines.RowCount--,<>,-1)
+		F.Intrinsic.Control.For(V.Local.iC,0,V.DataTable.Lines.RowCount--,1)
+			F.Intrinsic.String.Build("select TOP 1 Purchase_Order, PO_Line, Po_Time, Receiver_No  from V_PO_HISTORY Where Purchase_Order = '{0}' and Po_line = '{1}' Order By Date_Received desc, Po_Time desc",V.DataTable.Lines(V.Local.iC).Purchase_Order!FieldValTrim,V.DataTable.Lines(V.Local.iC).Record_No!FieldValTrim,V.Local.sSQL)
+			
+			F.Intrinsic.Control.If(V.DataTable.LineHist.Exists)
+				F.Data.DataTable.CreateFromSQL("TempHLine","con",V.Local.sSQL)
+				F.Intrinsic.Control.If(V.DataTable.TempHLine.RowCount--,<>,-1)
+					F.Data.DataTable.Merge("TempHLine","LineHist",False,4)
+				F.Intrinsic.Control.EndIf
+				F.Data.DataTable.Close("TempHLine")
+			F.Intrinsic.Control.Else
+				F.Data.DataTable.CreateFromSQL("LineHist","con",V.Local.sSQL,True)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iC)
+	F.Intrinsic.Control.Endif
+	
+	F.ODBC.Connection!Con.Close
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.LoadPOHist.End
+
+Program.Sub.LoadToRecordSet.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+
+	F.ODBC.Connection!Con.OpenCompanyConnection
+	
+	'Saving  to  tables.
+	F.Intrinsic.Control.If(V.DataTable.Lines.RowCount--,<>,-1)
+		F.Data.DataTable.AddColumn("Lines","RUNID",Long)
+		F.Data.DataTable.SetValue("Lines",-1,"RUNID",V.Global.iBIRunID)
+		F.Data.DataTable.SaveToDB("Lines","con","GCG_5592_INSPECTION","",128,"RUNID@!@RUNID*!*PURCHASE_ORDER@!@PURCHASE_ORDER*!*RECORD_NO@!@RECORD_NO*!*VENDOR@!@VENDOR*!*PART@!@PART*!*JOB@!@JOB*!*SEQUENCE@!@SEQUENCE*!*COST@!@COST*!*DATE_LAST_RECEIVED@!@DATE_LAST_RECEIVED*!*BUYER@!@BUYER*!*NAME_VENDOR@!@NAME_VENDOR*!*UM_PURCHASING@!@UM_PURCHASING*!*UM_INVENTORY@!@UM_INVENTORY*!*FACTOR_CONVERSION@!@FACTOR_CONVERSION*!*QTY_RECEIVED@!@QTY_RECEIVED*!*QTY_REJECT@!@QTY_REJECT*!*QTY_ORDER@!@QTY_ORDER*!*QTY_RECV_ALT@!@QTY_RECV_ALT*!*QTY_RECD_NOT_INSP@!@QTY_RECD_NOT_INSP")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.LineHist.RowCount--,<>,-1)
+		F.Data.DataTable.AddColumn("LineHist","RUNID",Long)
+		F.Data.DataTable.SetValue("LineHist",-1,"RUNID",V.Global.iBIRunID)
+		F.Data.DataTable.SaveToDB("LineHist","con","GCG_5592_INSP_HIST","",128,"RUNID@!@RUNID*!*PURCHASE_ORDER@!@PURCHASE_ORDER*!*PO_LINE@!@PO_LINE*!*RECEIVER_NO@!@RECEIVER_NO")
+	F.Intrinsic.Control.Endif
+
+	F.ODBC.Connection!Con.Close
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.LoadToRecordSet.End
+
+Program.Sub.Callbi.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+
+V.Local.sParams.Declare(String)
+V.Local.sValues.Declare(String)
+V.local.iRet.declare(Long)
+
+V.Local.sParams.Set("Range")
+V.Local.sValues.Set(V.Global.sRange)
+
+'Printing report
+F.Global.BI.RunReportPreProcessor(V.global.iBIRunID,V.global.lLogid,V.Local.sParams,V.Local.sValues,"",-1,True,"",-1,"",-1,"","",V.Local.iRet)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.Callbi.End
+
+Program.Sub.Form_Vendor_UnLoad.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	
+	F.Intrinsic.Control.End
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.Form_Vendor_UnLoad.End
+
+Program.Sub.txt2_BegVend_GotFocus.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	
+	Gui.Form_Vendor.txt2_BegVend.SelectAll
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.txt2_BegVend_GotFocus.End
+
+Program.Sub.txt2_BegVend_LostFocus.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	
+	Gui.Form_Vendor.txt2_EndVend.Text(V.Screen.Form_Vendor!txt2_BegVend.Text)
+	Gui.Form_Vendor.txt2_EndVend.SetFocus
+	Gui.Form_Vendor.txt2_EndVend.SelectAll
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.txt2_BegVend_LostFocus.End
+
+Program.Sub.cmd_txt2_BegVend_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	V.Local.sRet.Declare(String,"")
+	
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	
+	F.Intrinsic.UI.Browser(300,"",V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.Form_Vendor.txt2_BegVend.Text(V.Local.sRet.Trim)
+		Gui.Form_Vendor.txt2_EndVend.Text(V.Local.sRet.Trim)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.cmd_txt2_BegVend_Click.End
+
+Program.Sub.txt2_EndVend_GotFocus.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	
+	Gui.Form_Vendor.txt2_EndVend.SelectAll
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.txt2_EndVend_GotFocus.End
+
+Program.Sub.cmd_txt2_EndVend_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	V.Local.sRet.Declare(String,"")
+	
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+	F.Intrinsic.UI.Browser(300,"",V.Local.sRet)
+
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.Form_Vendor.txt2_EndVend.Text(V.Local.sRet.Trim)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.cmd_txt2_EndVend_Click.End
+
+Program.Sub.cmd_lvw_VendorAdd_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	
+	F.Intrinsic.Control.If(V.Screen.Form_Vendor!txt2_BegVend.Text,<," ","AND",V.Screen.Form_Vendor!txt2_EndVend.Text,<," ")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Math.Add(V.Global.iKey,1,V.Global.iKey)
+	Gui.Form_Vendor.lvw_Vendor.AddListItem(V.Global.iKey,V.Screen.Form_Vendor!txt2_BegVend.Text)
+	Gui.Form_Vendor.lvw_Vendor.SetListItemSubItemText(V.Global.iKey,1,V.Screen.Form_Vendor!txt2_EndVend.Text)
+	Gui.Form_Vendor.txt2_BegVend.Text("")
+	Gui.Form_Vendor.txt2_EndVend.Text("")
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.cmd_lvw_VendorAdd_Click.End
+
+Program.Sub.chk_AllVendor_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	
+	F.Intrinsic.Control.If(V.Screen.Form_Vendor!chk_AllVendor.Value,=,1)
+		Gui.Form_Vendor.txt2_BegVend.Enabled(False)
+		Gui.Form_Vendor.txt2_EndVend.Enabled(False)
+		Gui.Form_Vendor.cmd_txt2_BegVend.Enabled(False)
+		Gui.Form_Vendor.cmd_txt2_EndVend.Enabled(False)
+		Gui.Form_Vendor.cmd_lvw_VendorAdd.Enabled(False)
+		Gui.Form_Vendor.cmd_lvw_VendorClear.Enabled(False)
+		Gui.Form_Vendor.cmd_lvw_VendorDelete.Enabled(False)
+		Gui.Form_Vendor.txt2_BegVend.Text("")
+		Gui.Form_Vendor.txt2_EndVend.Text("")
+		Gui.Form_Vendor.lvw_Vendor.ClearItems
+		
+	F.Intrinsic.Control.Else
+		Gui.Form_Vendor.txt2_BegVend.Enabled(True)
+		Gui.Form_Vendor.txt2_EndVend.Enabled(True)
+		Gui.Form_Vendor.cmd_txt2_BegVend.Enabled(True)
+		Gui.Form_Vendor.cmd_txt2_EndVend.Enabled(True)
+		Gui.Form_Vendor.cmd_lvw_VendorAdd.Enabled(True)
+		Gui.Form_Vendor.cmd_lvw_VendorClear.Enabled(True)
+		Gui.Form_Vendor.cmd_lvw_VendorDelete.Enabled(True)
+		Gui.Form_Vendor.lvw_Vendor.ClearItems
+		
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.chk_AllVendor_Click.End
+
+Program.Sub.cmd_lvw_VendorDelete_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	V.Local.iKey.Declare(Long,0)
+	
+	V.Local.iKey.Set(V.Screen.Form_Vendor!lvw_Vendor.SelectedItemKey)
+	Gui.Form_Vendor.lvw_Vendor.RemoveItem(V.Local.iKey)
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.cmd_lvw_VendorDelete_Click.End
+
+Program.Sub.cmd_lvw_VendorClear_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	
+	Gui.Form_Vendor.lvw_Vendor.ClearItems
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.cmd_lvw_VendorClear_Click.End
+
+Program.Sub.cmdPrint_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare(String,"")
+	V.Local.i.Declare(Long,0)
+	V.Local.sRows.Declare(String,"")
+	V.Local.iOrd.Declare(Long,0)
+	V.Local.sRange.Declare(String,"")
+	V.Local.sTemp.Declare(String,"")
+	
+	Gui.Form_Vendor..Enabled(False)
+	
+	F.Global.BI.GetRunID(v.Global.iBIRunID)
+	
+	F.Global.BI.StartLogging(V.Global.iBIRunID,-1,-1,"",V.Global.lLogID)
+	
+	Gui.Form_Vendor.lvw_Vendor.RetrieveAllListItems(V.Local.sRows)
+	
+	F.Intrinsic.Control.If(V.local.sRows,<>,"***NORETURN***")
+		F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+
+		F.Intrinsic.Control.For(V.Local.i,0,V.Local.sRows.UBound,1)
+			Gui.Form_Vendor.lvw_Vendor.RetrieveItemOrdinal(V.Local.sRows(V.Local.i),V.Local.iOrd)
+			V.Local.sRange.Set(V.Screen.Form_Vendor!lvw_Vendor.ListItemTextExtended(V.Local.iOrd))
+			
+			F.Intrinsic.Control.If(V.Global.sRange.Trim,=,"")
+				F.Intrinsic.String.Split(V.Local.sRange,"*!*",V.Local.sTemp)
+				F.Intrinsic.String.Build("{0}-{1}",V.Local.sTemp(0).Trim,V.Local.sTemp(1).Trim,V.Local.sTemp)
+				V.Global.sRange.Set(V.Local.sTemp)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Split(V.Local.sRange,"*!*",V.Local.sTemp)
+				F.Intrinsic.String.Build("{0}-{1}",V.Local.sTemp(0).Trim,V.Local.sTemp(1).Trim,V.Local.sTemp)
+				F.Intrinsic.String.Build("{0},{1}",V.Global.sRange,V.Local.sTemp,V.Global.sRange)
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.Control.CallSub(Loadpolines,"Range",V.Local.sRange)
+		F.Intrinsic.Control.Next(V.Local.i)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.CallSub(Loadpolines,"Range","")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.CallSub(Loadpohist)
+	F.Intrinsic.Control.CallSub(Loadtorecordset)
+	
+	F.Global.BI.StopLogging(V.Global.lLogid)
+	
+	Gui.Form_Vendor..Visible(False)
+	
+	F.Intrinsic.Control.CallSub(Callbi)
+	
+	F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+		F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}","GCG_5592_PU_Inspection.g2u",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form_Vendor_UnLoad)
+	F.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndTry
+Program.Sub.cmdPrint_Click.End
+
+Program.Sub.Comments.Start
+Program.Sub.Comments.End
